@@ -142,13 +142,13 @@ export default {
   },
   methods: {
     blurInput() {
-      const scroll = this.$refs.scroll
-      scroll && scroll.scroll.on('beforeScrollStart', () => {
-        let activeElement = document.activeElement
-        if (activeElement && (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA')) {
-          activeElement.blur()
-        }
-      })
+      // const scroll = this.$refs.scroll
+      // scroll && scroll.scroll.on('beforeScrollStart', () => {
+      //   let activeElement = document.activeElement
+      //   if (activeElement && (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA')) {
+      //     activeElement.blur()
+      //   }
+      // })
     },
     setTimer() {
       let that = this
