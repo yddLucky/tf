@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <m-head></m-head>
+    <m-head :backFlag="backFlag"></m-head>
     <router-view></router-view>
   </div>
 </template>
@@ -10,6 +10,11 @@
   import {isiphoneX} from 'common/js/util'
 
   export default {
+    data(){
+      return {
+        backFlag: true
+      }
+    },
     components: {
       MHead
     },
@@ -27,6 +32,11 @@
     },
     watch:{
       $route(to,from){
+        if(to.path === '/preview') {
+          this.backFlag = false
+        }else{
+          this.backFlag = true
+        }
         isiphoneX()
       }
     }
@@ -34,6 +44,4 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
-#app
-  height: 100%
 </style>
